@@ -58,8 +58,9 @@ class DoctorTree:
         if node is None:
             return list()
         
-        result = list(node.name)
+        result = list()
 
+        result.append(node.name)
         result += self.preorder(node.left)
         result += self.preorder(node.right)
 
@@ -71,9 +72,9 @@ class DoctorTree:
         
         result = list()
 
-        result += self.preorder(node.left)
+        result += self.inorder(node.left)
         result.append(node.name)
-        result += self.preorder(node.right)
+        result += self.inorder(node.right)
 
         return result
 
@@ -83,8 +84,8 @@ class DoctorTree:
         
         result = list()
 
-        result += self.preorder(node.left)
-        result += self.preorder(node.right)
+        result += self.postorder(node.left)
+        result += self.postorder(node.right)
         result.append(node.name)
 
         return result
